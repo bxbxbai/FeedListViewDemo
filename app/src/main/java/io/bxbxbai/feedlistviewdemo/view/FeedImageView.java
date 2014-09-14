@@ -209,7 +209,7 @@ public class FeedImageView extends ImageView {
             return;
         }
         int sWidth = getWidth();
-        int newHeight = sWidth * width / height;
+        int newHeight = sWidth * height / width;
         params.width = sWidth;
         params.height = newHeight;
         setLayoutParams(params);
