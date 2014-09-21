@@ -1,4 +1,4 @@
-package io.bxbxbai.feedlistviewdemo;
+package io.bxbxbai.androiddemos.activity;
 
 import android.annotation.SuppressLint;
 import android.app.ActionBar;
@@ -10,7 +10,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -24,14 +23,19 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-import io.bxbxbai.feedlistviewdemo.adapter.FeedListAdapter;
-import io.bxbxbai.feedlistviewdemo.data.FeedItem;
-import io.bxbxbai.feedlistviewdemo.data.FeedResult;
-import io.bxbxbai.feedlistviewdemo.utils.GsonRequest;
+import io.bxbxbai.androiddemos.AppController;
+import io.bxbxbai.androiddemos.R;
+import io.bxbxbai.androiddemos.adapter.FeedListAdapter;
+import io.bxbxbai.androiddemos.data.FeedItem;
+import io.bxbxbai.androiddemos.data.FeedResult;
+import io.bxbxbai.androiddemos.utils.GsonRequest;
 
+/**
+ * Created by baia on 14-9-21.
+ */
+public class FeedListActivity extends Activity {
+    private static final String TAG = "FeedListActivity";
 
-public class MainActivity extends Activity {
-    private static final String TAG = MainActivity.class.getSimpleName();
     private ListView listView;
     private FeedListAdapter listAdapter;
     private List<FeedItem> feedItems;
@@ -44,7 +48,7 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_feed_list);
         initActionbar();
         listView = (ListView) findViewById(R.id.feed_list);
 
@@ -120,7 +124,7 @@ public class MainActivity extends Activity {
     private void initActionbar() {
         mActionbar = getActionBar();
         mActionbar.setDisplayHomeAsUpEnabled(true);
-        mActionbar.setDisplayShowHomeEnabled(false);
+        mActionbar.setDisplayShowHomeEnabled(true);
         mActionbar.setHomeButtonEnabled(true);
         mActionbar.setIcon(R.drawable.ic_launcher);
         mActionbar.setDisplayShowTitleEnabled(false);
@@ -129,13 +133,8 @@ public class MainActivity extends Activity {
         View view = View.inflate(this, R.layout.layout_actionbar, null);
         mActionbarTitle = (ShimmerTextView) view.findViewById(R.id.tv_action_bar_title);
         new Shimmer().start(mActionbarTitle);
-        mActionbarTitle.setText("FeedListViewDemo");
+        mActionbarTitle.setText(R.string.feed_list_demo);
         mActionbar.setCustomView(view);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
 }

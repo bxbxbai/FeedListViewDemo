@@ -1,4 +1,4 @@
-package io.bxbxbai.feedlistviewdemo.utils;
+package io.bxbxbai.androiddemos.utils;
 
 /**
  * Created by baia on 14-9-21.

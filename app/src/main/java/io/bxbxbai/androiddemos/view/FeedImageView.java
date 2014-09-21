@@ -1,4 +1,4 @@
-package io.bxbxbai.feedlistviewdemo.view;
+package io.bxbxbai.androiddemos.view;
 
 import android.content.Context;
 import android.graphics.Bitmap;

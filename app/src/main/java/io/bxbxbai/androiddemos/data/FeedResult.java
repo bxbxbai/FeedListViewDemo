@@ -1,4 +1,4 @@
-package io.bxbxbai.feedlistviewdemo.data;
+package io.bxbxbai.androiddemos.data;
 
 import com.google.gson.annotations.SerializedName;
 

@@ -1,4 +1,4 @@
-package io.bxbxbai.feedlistviewdemo;
+package io.bxbxbai.androiddemos;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

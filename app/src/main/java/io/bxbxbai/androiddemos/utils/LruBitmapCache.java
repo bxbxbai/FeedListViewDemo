@@ -1,4 +1,4 @@
-package io.bxbxbai.feedlistviewdemo.utils;
+package io.bxbxbai.androiddemos.utils;
 
 import android.graphics.Bitmap;
 import android.util.LruCache;

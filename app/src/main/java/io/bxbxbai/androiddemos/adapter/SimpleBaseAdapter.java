@@ -1,4 +1,4 @@
-package io.bxbxbai.feedlistviewdemo.adapter;
+package io.bxbxbai.androiddemos.adapter;
 
 import android.content.Context;
 import android.util.SparseArray;

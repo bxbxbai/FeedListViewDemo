@@ -72,7 +72,7 @@
             android:paddingRight="@dimen/feed_item_status_pad_left_right"
             android:textColorLink="@color/link" />
 
-        <io.bxbxbai.feedlistviewdemo.view.FeedImageView
+        <io.bxbxbai.androiddemos.view.FeedImageView
             android:id="@+id/feedImage1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

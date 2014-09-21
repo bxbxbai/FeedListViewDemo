@@ -1,10 +1,10 @@
-package io.bxbxbai.feedlistviewdemo.utils;
+package io.bxbxbai.androiddemos.utils;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 
-import io.bxbxbai.feedlistviewdemo.AppController;
+import io.bxbxbai.androiddemos.AppController;
 
 /**
  * Created by baia on 14-9-13.

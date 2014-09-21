@@ -1,4 +1,4 @@
-package io.bxbxbai.feedlistviewdemo.utils;
+package io.bxbxbai.androiddemos.utils;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.NetworkResponse;

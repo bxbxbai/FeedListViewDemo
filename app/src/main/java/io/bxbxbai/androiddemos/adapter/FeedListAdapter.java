@@ -1,4 +1,4 @@
-package io.bxbxbai.feedlistviewdemo.adapter;
+package io.bxbxbai.androiddemos.adapter;
 
 import android.app.Activity;
 import android.content.Context;
@@ -17,10 +17,10 @@ import com.android.volley.toolbox.NetworkImageView;
 
 import java.util.List;
 
-import io.bxbxbai.feedlistviewdemo.AppController;
-import io.bxbxbai.feedlistviewdemo.view.FeedImageView;
-import io.bxbxbai.feedlistviewdemo.R;
-import io.bxbxbai.feedlistviewdemo.data.FeedItem;
+import io.bxbxbai.androiddemos.AppController;
+import io.bxbxbai.androiddemos.view.FeedImageView;
+import io.bxbxbai.androiddemos.R;
+import io.bxbxbai.androiddemos.data.FeedItem;
 
 /**
  * Created by baia on 14-9-13.

@@ -1,4 +1,4 @@
-package io.bxbxbai.feedlistviewdemo;
+package io.bxbxbai.androiddemos;
 
 import android.app.Application;
 
@@ -7,7 +7,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
 
-import io.bxbxbai.feedlistviewdemo.utils.LruBitmapCache;
+import io.bxbxbai.androiddemos.utils.LruBitmapCache;
 
 /**
  * Created by baia on 14-9-11.
