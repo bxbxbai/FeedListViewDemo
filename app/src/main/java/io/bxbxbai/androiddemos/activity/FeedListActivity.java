@@ -39,7 +39,7 @@ public class FeedListActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feed_list);
         setTitle(R.string.feed_list_demo);
-        
+
         listView = (ListView) findViewById(R.id.feed_list);
         feedItems = new ArrayList<FeedItem>();
         listAdapter = new FeedListAdapter(this, feedItems);
