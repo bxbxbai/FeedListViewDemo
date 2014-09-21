@@ -5,4 +5,18 @@
         android:title="@string/action_settings"
         android:orderInCategory="100"
         android:showAsAction="never" />
+
+    <item android:id="@+id/action_search"
+        android:icon="@drawable/actionbar_menu_icn_search"
+        android:title="@string/action_search"
+        android:showAsAction="ifRoom"/>
+    <item android:id="@+id/action_time"
+        android:icon="@drawable/actionbar_menu_icn_time"
+        android:title="@string/action_clock"
+        android:showAsAction="ifRoom"/>
+    <item android:id="@+id/action_exit"
+        android:icon="@drawable/actionbar_menu_icn_exit"
+        android:title="@string/action_exit"
+        android:showAsAction="ifRoom"/>
+
 </menu>
