@@ -1,20 +1,12 @@
 package io.bxbxbai.androiddemos.activity;
 
 import android.annotation.SuppressLint;
-import android.app.ActionBar;
-import android.app.Activity;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.View;
 import android.widget.ListView;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.romainpiel.shimmer.Shimmer;
-import com.romainpiel.shimmer.ShimmerTextView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -33,7 +25,7 @@ import io.bxbxbai.androiddemos.utils.GsonRequest;
 /**
  * Created by baia on 14-9-21.
  */
-public class FeedListActivity extends Activity {
+public class FeedListActivity extends BaseActivity {
     private static final String TAG = "FeedListActivity";
 
     private ListView listView;
@@ -41,27 +33,17 @@ public class FeedListActivity extends Activity {
     private List<FeedItem> feedItems;
     private String URL_FEED = "http://api.androidhive.info/feed/feed.json";
 
-    private ActionBar mActionbar;
-    private ShimmerTextView mActionbarTitle;
-
     @SuppressLint("NewApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feed_list);
-        initActionbar();
+        setTitle(R.string.feed_list_demo);
+        
         listView = (ListView) findViewById(R.id.feed_list);
-
         feedItems = new ArrayList<FeedItem>();
-
         listAdapter = new FeedListAdapter(this, feedItems);
         listView.setAdapter(listAdapter);
-
-        // These two lines not needed,
-        // just to get the look of facebook (changing background color & hiding the ic_launcher)
-        getActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#3b5998")));
-        getActionBar().setIcon(
-                new ColorDrawable(getResources().getColor(android.R.color.transparent)));
 
         // making fresh volley request and getting json
         GsonRequest<FeedResult> gsonRequest = new GsonRequest<FeedResult>(URL_FEED, FeedResult.class,
@@ -121,20 +103,6 @@ public class FeedListActivity extends Activity {
         }
     }
 
-    private void initActionbar() {
-        mActionbar = getActionBar();
-        mActionbar.setDisplayHomeAsUpEnabled(true);
-        mActionbar.setDisplayShowHomeEnabled(true);
-        mActionbar.setHomeButtonEnabled(true);
-        mActionbar.setIcon(R.drawable.ic_launcher);
-        mActionbar.setDisplayShowTitleEnabled(false);
-        mActionbar.setDisplayShowCustomEnabled(true);
 
-        View view = View.inflate(this, R.layout.layout_actionbar, null);
-        mActionbarTitle = (ShimmerTextView) view.findViewById(R.id.tv_action_bar_title);
-        new Shimmer().start(mActionbarTitle);
-        mActionbarTitle.setText(R.string.feed_list_demo);
-        mActionbar.setCustomView(view);
-    }
 
 }

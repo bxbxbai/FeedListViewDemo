@@ -25,6 +25,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
+import io.bxbxbai.androiddemos.activity.BaseActivity;
 import io.bxbxbai.androiddemos.activity.FeedListActivity;
 import io.bxbxbai.androiddemos.adapter.FeedListAdapter;
 import io.bxbxbai.androiddemos.data.FeedItem;
@@ -33,18 +34,15 @@ import io.bxbxbai.androiddemos.utils.GsonRequest;
 import io.bxbxbai.androiddemos.utils.ViewFinder;
 
 
-public class MainActivity extends Activity {
+public class MainActivity extends BaseActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
-
-    private ActionBar mActionbar;
-    private ShimmerTextView mActionbarTitle;
 
     @SuppressLint("NewApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        initActionbar();
+        setTitle(R.string.app_name);
 
         ViewFinder finder = new ViewFinder(this);
         finder.onClick(R.id.btn_feed_list_demo, new View.OnClickListener() {
@@ -54,29 +52,9 @@ public class MainActivity extends Activity {
             }
         });
 
-        // These two lines not needed,
-        // just to get the look of facebook (changing background color & hiding the ic_launcher)
-        getActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#3b5998")));
-        getActionBar().setIcon(
-                new ColorDrawable(getResources().getColor(android.R.color.transparent)));
 
     }
 
-    private void initActionbar() {
-        mActionbar = getActionBar();
-        mActionbar.setDisplayHomeAsUpEnabled(true);
-        mActionbar.setDisplayShowHomeEnabled(false);
-        mActionbar.setHomeButtonEnabled(true);
-        mActionbar.setIcon(R.drawable.ic_launcher);
-        mActionbar.setDisplayShowTitleEnabled(false);
-        mActionbar.setDisplayShowCustomEnabled(true);
-
-        View view = View.inflate(this, R.layout.layout_actionbar, null);
-        mActionbarTitle = (ShimmerTextView) view.findViewById(R.id.tv_action_bar_title);
-        new Shimmer().start(mActionbarTitle);
-        mActionbarTitle.setText(R.string.app_name);
-        mActionbar.setCustomView(view);
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
