@@ -43,10 +43,9 @@ public abstract class BaseActivity extends FragmentActivity {
         actionBar.setCustomView(view);
 
         // These two lines not needed,
-        // just to get the look of facebook (changing background color & hiding the ic_launcher)
+        // just to get the look of facebook (changing background color & hiding the ic_app)
         getActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#3b5998")));
-        getActionBar().setIcon(
-                new ColorDrawable(getResources().getColor(android.R.color.transparent)));
+        getActionBar().setIcon(R.drawable.ic_app);
     }
 
     public void setTitle(int resId) {

@@ -20,6 +20,7 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setTitle(R.string.app_name);
+        actionBar.setDisplayHomeAsUpEnabled(false);
 
         ViewFinder finder = new ViewFinder(this);
         finder.onClick(R.id.btn_feed_list_demo, new View.OnClickListener() {
